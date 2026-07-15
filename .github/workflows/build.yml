@@ -31,14 +31,14 @@ jobs:
             --recurse-submodules --shallow-submodules \
             https://github.com/raspberrypi/pico-sdk.git pico-sdk
 
-  # Waveshare RP2040-Zero and RP2350-Zero (Pico SDK).
+  # RP2xxx boards (Pico SDK): Raspberry Pi Pico / Pico 2 and Waveshare RP2040/RP2350-Zero.
   build-rp2xxx:
     needs: setup
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        board: [rp2040-zero, rp2350-zero]
+        board: [rp2040-zero, rp2350-zero, pico, pico2]
 
     steps:
       - name: Checkout repository
@@ -144,4 +144,6 @@ jobs:
           files: |
             dist/gcn-usb-adapter-rp2040-zero/gcn-usb-adapter-rp2040-zero.uf2
             dist/gcn-usb-adapter-rp2350-zero/gcn-usb-adapter-rp2350-zero.uf2
+            dist/gcn-usb-adapter-pico/gcn-usb-adapter-pico.uf2
+            dist/gcn-usb-adapter-pico2/gcn-usb-adapter-pico2.uf2
             dist/gcn-usb-adapter-esp32-s3-zero/gcn-usb-adapter-esp32-s3-zero.bin

@@ -17,7 +17,7 @@ Built using [`libjoybus`](https://github.com/loopj/libjoybus) and [TinyUSB](http
 
 ## Installation
 
-Pre-built firmware files are available for Waveshare RP2040-Zero, Waveshare RP2350-Zero, and Waveshare ESP32-S3-Zero boards. You can find them on the [releases page](https://github.com/loopj/gcn-usb-adapter/releases/latest).
+Pre-built firmware files are available for Raspberry Pi Pico, Raspberry Pi Pico 2, Waveshare RP2040-Zero, Waveshare RP2350-Zero, and Waveshare ESP32-S3-Zero boards. You can find them on the [releases page](https://github.com/loopj/gcn-usb-adapter/releases/latest).
 
 ### Raspberry Pi Pico / Pico 2
 
@@ -47,6 +47,8 @@ The pre-built firmwares map the four controller ports to the following GPIOs:
 | ----------------------- | ------ | ------ | ------ | ------ |
 | Waveshare RP2040-Zero   | GP29   | GP28   | GP27   | GP26   |
 | Waveshare RP2350-Zero   | GP29   | GP28   | GP27   | GP26   |
+| Raspberry Pi Pico       | GP2    | GP3    | GP4    | GP5    |
+| Raspberry Pi Pico 2     | GP2    | GP3    | GP4    | GP5    |
 | Waveshare ESP32-S3-Zero | GP1    | GP2    | GP3    | GP4    |
 
 ## Building from Source

@@ -30,10 +30,41 @@
         "GCCA_JOYBUS_GPIO_CH2": "27",
         "GCCA_JOYBUS_GPIO_CH3": "26"
       }
+    },
+    {
+      "name": "pico",
+      "displayName": "Raspberry Pi Pico",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "PICO_BOARD": "pico",
+        "GCCA_JOYBUS_GPIO_CH0": "2",
+        "GCCA_JOYBUS_GPIO_CH1": "3",
+        "GCCA_JOYBUS_GPIO_CH2": "4",
+        "GCCA_JOYBUS_GPIO_CH3": "5"
+      }
+    },
+    {
+      "name": "pico2",
+      "displayName": "Raspberry Pi Pico 2",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "PICO_BOARD": "pico2",
+        "PICO_PLATFORM": "rp2350",
+        "GCCA_JOYBUS_GPIO_CH0": "2",
+        "GCCA_JOYBUS_GPIO_CH1": "3",
+        "GCCA_JOYBUS_GPIO_CH2": "4",
+        "GCCA_JOYBUS_GPIO_CH3": "5"
+      }
     }
   ],
   "buildPresets": [
     { "name": "rp2040-zero", "configurePreset": "rp2040-zero" },
-    { "name": "rp2350-zero", "configurePreset": "rp2350-zero" }
+    { "name": "rp2350-zero", "configurePreset": "rp2350-zero" },
+    { "name": "pico", "configurePreset": "pico" },
+    { "name": "pico2", "configurePreset": "pico2" }
   ]
 }
