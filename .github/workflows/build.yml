@@ -68,13 +68,13 @@ jobs:
 
       - name: Stage artifact
         working-directory: ports/rp2xxx
-        run: cp build/${{ matrix.board }}/gcn-usb-adapter.uf2 gcn-usb-adapter-${{ matrix.board }}.uf2
+        run: cp build/${{ matrix.board }}/usb-gcca.uf2 usb-gcca-${{ matrix.board }}.uf2
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gcn-usb-adapter-${{ matrix.board }}
-          path: ports/rp2xxx/gcn-usb-adapter-${{ matrix.board }}.uf2
+          name: usb-gcca-${{ matrix.board }}
+          path: ports/rp2xxx/usb-gcca-${{ matrix.board }}.uf2
           if-no-files-found: error
 
   # ESP32 boards (ESP-IDF). USB HID needs native USB-OTG (ESP32-S2/S3/P4).
@@ -104,15 +104,15 @@ jobs:
           path: ports/esp32
           command: >-
             idf.py -D SDKCONFIG_DEFAULTS="sdkconfig.defaults;boards/${{ matrix.board }}.defaults" build &&
-            idf.py merge-bin -o gcn-usb-adapter-${{ matrix.board }}.bin
+            idf.py merge-bin -o usb-gcca-${{ matrix.board }}.bin
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gcn-usb-adapter-${{ matrix.board }}
+          name: usb-gcca-${{ matrix.board }}
           path: |
-            ports/esp32/build/gcn-usb-adapter-${{ matrix.board }}.bin
-            ports/esp32/build/gcn-usb-adapter.bin
+            ports/esp32/build/usb-gcca-${{ matrix.board }}.bin
+            ports/esp32/build/usb-gcca.bin
             ports/esp32/build/bootloader/bootloader.bin
             ports/esp32/build/partition_table/partition-table.bin
             ports/esp32/build/flasher_args.json
@@ -142,8 +142,8 @@ jobs:
           generate_release_notes: ${{ startsWith(github.ref, 'refs/tags/v') }}
           fail_on_unmatched_files: true
           files: |
-            dist/gcn-usb-adapter-rp2040-zero/gcn-usb-adapter-rp2040-zero.uf2
-            dist/gcn-usb-adapter-rp2350-zero/gcn-usb-adapter-rp2350-zero.uf2
-            dist/gcn-usb-adapter-pico/gcn-usb-adapter-pico.uf2
-            dist/gcn-usb-adapter-pico2/gcn-usb-adapter-pico2.uf2
-            dist/gcn-usb-adapter-esp32-s3-zero/gcn-usb-adapter-esp32-s3-zero.bin
+            dist/usb-gcca-rp2040-zero/usb-gcca-rp2040-zero.uf2
+            dist/usb-gcca-rp2350-zero/usb-gcca-rp2350-zero.uf2
+            dist/usb-gcca-pico/usb-gcca-pico.uf2
+            dist/usb-gcca-pico2/usb-gcca-pico2.uf2
+            dist/usb-gcca-esp32-s3-zero/usb-gcca-esp32-s3-zero.bin

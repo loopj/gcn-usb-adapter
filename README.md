@@ -17,7 +17,7 @@ Built using [`libjoybus`](https://github.com/loopj/libjoybus) and [TinyUSB](http
 
 ## Installation
 
-Pre-built firmware files are available for Raspberry Pi Pico, Raspberry Pi Pico 2, Waveshare RP2040-Zero, Waveshare RP2350-Zero, and Waveshare ESP32-S3-Zero boards. You can find them on the [releases page](https://github.com/loopj/gcn-usb-adapter/releases/latest).
+Pre-built firmware files are available for Raspberry Pi Pico, Raspberry Pi Pico 2, Waveshare RP2040-Zero, Waveshare RP2350-Zero, and Waveshare ESP32-S3-Zero boards. You can find them on the [releases page](https://github.com/loopj/usb-gamecube-controller-adapter/releases/latest).
 
 ### Raspberry Pi Pico / Pico 2
 

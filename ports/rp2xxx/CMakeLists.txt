@@ -5,10 +5,10 @@ cmake_minimum_required(VERSION 3.20)
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
 # Configure project
-project(gcn-usb-adapter C CXX ASM)
+project(usb-gcca C CXX ASM)
 
 # CMake target
-set(TARGET gcn-usb-adapter)
+set(TARGET usb-gcca)
 
 # Initialize the Pico SDK
 pico_sdk_init()
